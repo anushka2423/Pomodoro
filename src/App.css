@@ -1,0 +1,18 @@
+/* write your css here */
+.vertical-text {
+    writing-mode: vertical-rl;
+    transform: rotate(90deg); /* Rotates the text 180 degrees to make it upright */
+    transform-origin: center; /* Sets the rotation origin to the center */
+    white-space: nowrap; /* Prevents the text from wrapping */
+    /* Add any other styling you want for the text */
+    font-size: 16px;
+    color: #333;
+    background-color: #b2967d;
+    overflow: hidden;
+    font-weight: bold;
+    border-radius: 0.375rem;
+  }
+
+  .vertical-text:hover {
+    background-color: #a98467;
+  }
