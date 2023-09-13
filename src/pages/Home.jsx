@@ -19,20 +19,20 @@ const Home = ({isHovered}) => {
     const settingInfo =  useContext(AdjustmentContext);
     
     const [isPaused , setIsPaused] = useState(true);
-    const [secLeft , setSecLeft] = useState(0);
     const [mode , setMode] = useState('break');
+    const [secLeft , setSecLeft] = useState((mode ==='Focus' ? (settingInfo.workMinutes) : (settingInfo.breakMinutes)) * 60);
 
     const isPausedRef = useRef(isPaused);
     const secLeftRef = useRef(secLeft);
     const modeRef = useRef(mode);
 
     function initTimer() {
-        setSecLeft((mode ==='Focus' ? (settingInfo.workMinutes) : (settingInfo.breakMinutes)) * 60); //here was the problem keval workminutes tha
+        setSecLeft((mode ==='Focus' ? (settingInfo.workMinutes) : (settingInfo.breakMinutes)) * 60); 
     }
 
     function switchMode () {
         timerSound()
-        const nextMode = modeRef.current === 'Focus'? 'break' : 'Focus'; //here was the problem focus ki jagha work tha
+        const nextMode = modeRef.current === 'Focus'? 'break' : 'Focus'; 
         const nextSec = (nextMode ==='Focus' ? settingInfo.workMinutes : settingInfo.breakMinutes) * 60
 
         setMode(nextMode);
